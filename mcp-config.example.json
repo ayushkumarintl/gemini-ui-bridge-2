@@ -1,0 +1,22 @@
+{
+  "mcpServers": {
+    "gemini-ui-bridge": {
+      "command": "node",
+      "args": [
+        "--max-old-space-size=128",
+        "C:\\path\\to\\gemini-ui-bridge\\src\\mcp-server.js"
+      ],
+      "env": {
+        "REAL_BROWSER_DEBUG_PORT": "9222",
+        "CHROME_CDP_URL": "http://127.0.0.1:9222",
+        "LOW_RESOURCE_MODE": "true",
+        "GEMINI_BROWSER_VISIBILITY": "offscreen",
+        "GEMINI_BRING_TO_FRONT": "false",
+        "GEMINI_CAPTURE_MEDIA_REFS_FOR_TEXT": "false",
+        "GEMINI_RETURN_PROMPT_IN_RESPONSE": "true",
+        "GEMINI_MAX_MEDIA_REFS": "50",
+        "HEADLESS": "false"
+      }
+    }
+  }
+}
