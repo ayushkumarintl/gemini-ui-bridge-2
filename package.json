@@ -1,0 +1,30 @@
+{
+  "name": "gemini-ui-bridge",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Local browser automation bridge that lets other AI tools prompt the Gemini web UI without using the paid Gemini API.",
+  "scripts": {
+    "start": "node --max-old-space-size=128 src/http-server.js",
+    "open": "node --max-old-space-size=128 src/open-gemini.js",
+    "mcp": "node --max-old-space-size=128 src/mcp-server.js",
+    "launch-browser": "node --max-old-space-size=128 src/launch-real-browser.js",
+    "close-browser": "node --max-old-space-size=128 src/close-real-browser.js",
+    "archive-index": "node --max-old-space-size=128 src/open-stuff.js index",
+    "open-stuff": "node --max-old-space-size=128 src/open-stuff.js gallery",
+    "open-latest": "node --max-old-space-size=128 src/open-stuff.js latest",
+    "browser-hide": "node --max-old-space-size=64 src/browser-visibility.js offscreen",
+    "browser-show": "node --max-old-space-size=64 src/browser-visibility.js visible",
+    "browser-minimize": "node --max-old-space-size=64 src/browser-visibility.js minimized",
+    "site": "node scripts/serve-docs.js",
+    "security-check": "node scripts/security-check.js",
+    "ensure-browser": "node --max-old-space-size=128 src/ensure-browser-installed.js",
+    "install-browser": "npx playwright install chromium"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.17.0",
+    "dotenv": "^16.4.7",
+    "playwright": "^1.49.1",
+    "zod": "^3.24.1"
+  }
+}
