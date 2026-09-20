@@ -123,3 +123,7 @@ I genuinely respond to every message. Whether it's a project idea, bug report, c
 ---
 
 ## 🎬 My Coding Philosophy
+
+When I started coding, I thought clever code was cool. Complex one-liners, cryptic variable names, solutions only I could understand.
+
+**Then I realized something:** Great developers write code for *humans*, not machines.
