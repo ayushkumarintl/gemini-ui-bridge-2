@@ -1,0 +1,106 @@
+<section id="contact">
+  <div class="container">
+    <form class="contact-form" id="contactForm">
+      <h2>Contact Us</h2>
+
+      <div class="field">
+        <label for="name">Full Name</label>
+        <input type="text" id="name" name="name" placeholder="Enter your name" required />
+      </div>
+
+      <div class="field">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email" required />
+      </div>
+
+      <div class="field">
+        <label for="subject">Subject</label>
+        <input type="text" id="subject" name="subject" placeholder="How can we help?" required />
+      </div>
+
+      <div class="field">
+        <label for="message">Message</label>
+        <textarea id="message" name="message" placeholder="Write your message here..." required></textarea>
+      </div>
+
+      <button type="submit">Send Message</button>
+    </form>
+  </div>
+</section>
+
+<script>
+  document.getElementById("contactForm").addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const name = document.getElementById("name").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const subject = document.getElementById("subject").value.trim();
+    const message = document.getElementById("message").value.trim();
+
+    if (!name || !email || !subject || !message) {
+      alert("Please fill in all fields.");
+      return;
+    }
+
+    alert(`Thanks ${name}! Your message has been sent.`);
+    this.reset();
+  });
+</script>
+
+<style>
+  .contact-form {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 30px;
+    background: #111827;
+    border: 1px solid #334155;
+    border-radius: 18px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+    color: #f8fafc;
+  }
+
+  .contact-form h2 {
+    margin-bottom: 20px;
+    font-size: 2rem;
+  }
+
+  .field {
+    margin-bottom: 18px;
+  }
+
+  .field label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+  }
+
+  .field input,
+  .field textarea {
+    width: 100%;
+    padding: 12px 14px;
+    border-radius: 10px;
+    border: 1px solid #475569;
+    background: #0f172a;
+    color: white;
+    font-size: 1rem;
+  }
+
+  .field textarea {
+    min-height: 140px;
+    resize: vertical;
+  }
+
+  .contact-form button {
+    background: linear-gradient(135deg, #38bdf8, #8b5cf6);
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 999px;
+    cursor: pointer;
+    font-weight: 700;
+  }
+
+  .contact-form button:hover {
+    opacity: 0.95;
+  }
+</style> 
