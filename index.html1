@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BrandX | Dark/Light Theme</title>
+  <style>
+    :root {
+      --bg: #0f172a;
+      --bg-soft: #111827;
+      --panel: rgba(15, 23, 42, 0.9);
+      --panel-2: #1e293b;
+      --text: #e2e8f0;
+      --text-soft: #cbd5e1;
+      --muted: #94a3b8;
+      --border: rgba(148, 163, 184, 0.25);
+      --accent-1: #38bdf8;
+      --accent-2: #8b5cf6;
+      --shadow: rgba(15, 23, 42, 0.35);
+      --button-text: #ffffff;
+      --input-bg: #0f172a;
+      --input-border: #334155;
+      --card-gradient: linear-gradient(180deg, rgba(30,41,59,0.9), rgba(15,23,42,1));
+      --hero-gradient: linear-gradient(135deg, rgba(56,189,248,0.15), rgba(139,92,246,0.18));
+    }
+
+    body.light {
+      --bg: #f8fafc;
+      --bg-soft: #eef2ff;
+      --panel: rgba(255,255,255,0.9);
+      --panel-2: #f1f5f9;
+      --text: #0f172a;
+      --text-soft: #334155;
+      --muted: #475569;
+      --border: rgba(15, 23, 42, 0.12);
+      --accent-1: #0ea5e9;
+      --accent-2: #7c3aed;
+      --shadow: rgba(15, 23, 42, 0.08);
+      --button-text: #ffffff;
+      --input-bg: #ffffff;
+      --input-border: #cbd5e1;
+      --card-gradient: linear-gradient(180deg, rgba(255,255,255,0.95), rgba(241,245,249,1));
+      --hero-gradient: linear-gradient(135deg, rgba(14,165,233,0.12), rgba(124,58,237,0.14));
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      transition: background 0.25s ease, color 0.25s ease;
+    }
+
+    a { text-decoration: none; color: inherit; }
+    img { max-width: 100%; display: block; }
+
+    .container {
+      width: min(1120px, 90%);
+      margin: 0 auto;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(15, 23, 42, 0.45);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    body.light header {
+      background: rgba(255, 255, 255, 0.6);
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      min-height: 72px;
+      gap: 18px;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: var(--accent-1);
+      letter-spacing: 0.5px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      color: var(--text-soft);
+    }
+
+    .nav-links a {
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a:hover { color: var(--text); }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .theme-toggle,
+    .btn,
+    .secondary-btn {
+      border: none;
+      cursor: pointer;
+      transition: transform 0.2s ease, opacity 0.2s ease;
+    }
+
+    .theme-toggle {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: var(--panel-2);
+      color: var(--text);
+      border: 1px solid var(--border);
+      font-size: 1.2rem;
+    }
+
+    .btn {
