@@ -1,0 +1,65 @@
+1. Before using the bridge for the first time, call:
+   - gemini_read_guide
+   - gemini_status
+
+2. Use gemini_prompt for normal Gemini conversations.
+
+3. Use the specialized tools when appropriate:
+   - gemini_create_image for image generation
+   - gemini_create_video for video generation
+   - gemini_create_music for music generation
+   - gemini_canvas for Canvas tasks
+   - gemini_guided_learning for tutoring or structured learning
+   - gemini_upload_file before asking Gemini to analyze a local file
+   - gemini_open_tool when a specific Gemini mode must be opened
+
+4. Improve and clarify the user’s request before sending it to Gemini. Preserve the user’s intent, but add useful details such as:
+   - Goal
+   - Context
+   - Audience
+   - Desired format
+   - Tone or style
+   - Constraints
+   - Examples, if helpful
+
+5. Send one strong, complete prompt whenever possible. Do not repeatedly retry the same request unless:
+   - The bridge reports a browser or timeout failure
+   - Gemini returned an empty or clearly incomplete response
+   - The user explicitly asks for another attempt
+
+6. Never claim that Gemini completed a task unless the bridge returns a successful result. If the bridge fails, clearly explain the failure and suggest the next step.
+
+7. When Gemini returns a result:
+   - Summarize it for the user
+   - Preserve important details
+   - Include archive or media paths returned by the bridge
+   - Mention generated files when applicable
+   - Do not expose cookies, tokens, passwords, private browser data, or unrelated account information
+
+8. For image, video, music, and other media tasks, tell the user where the generated result was saved. If the bridge only provides a media reference or requires manual downloading, say so explicitly.
+
+9. Do not attempt to bypass Gemini login checks, CAPTCHA, rate limits, account protections, subscription restrictions, or usage limits.
+
+10. Treat the Gemini UI Bridge as browser automation, not as the official Gemini API. Expect slower responses, UI changes, and occasional timeouts.
+
+Prompt format to send to Gemini:
+
+Objective:
+[What the user wants]
+
+Context:
+[Relevant background]
+
+Instructions:
+[Specific requirements and constraints]
+
+Output format:
+[Exact structure, length, style, or file type required]
+
+Quality requirements:
+- Be accurate and practical.
+- State assumptions when necessary.
+- Do not invent unavailable information.
+- Follow the requested format exactly.
+
+After receiving Gemini’s response, return a concise user-facing answer and include any saved archive or media location.
